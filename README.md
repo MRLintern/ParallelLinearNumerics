@@ -4,6 +4,6 @@ Software which uses OpenMP to parallelise the three classic Algebraic Iterative 
 ## Requirements
 * __Compiler__:`g++ 13.1.0`. Where possible, __C++20__ features have been used.
 * __OS__: `Ubuntu 20.04`.
-* `OpenMP`.
-* `CMake`.
-* `matplotlib-cpp`.
+* `OpenMP`. For __parallelising the iterative methods: __Jacobi__, __Gauss-Seidel__ and __SOR__.
+* `CMake`. For building the software.
+* `matplotlib-cpp`. For plotting __Convergence Rates__.
