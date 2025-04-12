@@ -19,7 +19,7 @@ Software which uses OpenMP to parallelise the three classic Algebraic Iterative 
 
 ### Red-Black Ordering Scheme: What is it?
 * This is a technique to organize a __structured grid__ (like a 2D matrix) into two independent groups of points — typically labeled __"red"__ and __"black"__ like a __chessboard pattern__.
-* Points of one colour can be updated in parallel because none of them directly depend on each other - only on the other color's points.
+* Points of one colour can be updated in parallel because none of them directly depend on each other - only on the other colour's points.
 * You alternate updating all the red points and then all the black points in each iteration.
 
 
