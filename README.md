@@ -1,5 +1,5 @@
 # Parallel_Linear_Solver
-Software which uses OpenMP to parallelise the three classic Algebraic Iterative Methods: Jacobi, Gauss-Seidel &amp; Successive Over Relaxationolving, for solving Systems of the form Ax = b.
+Software which uses __OpenMP__ to __parallelise__ the three classic __Algebraic Iterative Methods__: __Jacobi__, __Gauss-Seidel__ and __Successive Over Relaxation (SOR)__ for solving Systems of the form Ax = b.
 
 ## Introduction
 * There is a problem in trying to parallelise the __Gauss-Seidel__ & __SOR__ methods because they are inherently __sequential__ due to the dependency on the latest updated values within each iteration.
