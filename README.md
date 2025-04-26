@@ -13,11 +13,11 @@
 * Here is a brief overview of the methods.
 
 ### The Jacobi Method
-
+* TODO.
 ### The Gauss-Seidel Method
-
+* TODO.
 ### The Successive Over Relaxation (SOR) Method
-
+* TODO.
 ### Red-Black Ordering Scheme: What is it?
 * This is a technique to organize a __structured grid__ (like a 2D matrix) into two independent groups of points — typically labeled __"red"__ and __"black"__ like a __chessboard pattern__.
 * Points of one colour can be updated in parallel because none of them directly depend on each other - only on the other colour's points.
