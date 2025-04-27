@@ -7,7 +7,7 @@
 * However, this scheme is more appropriate for systems where the matrix isn't __dense__.
 * If the matrix is dense, true parallel forms of the methods is tricky, and so the algorithm logic has to be altered.
 * If the matrix is __dense__, we can use ___Graph Colouring___ (AKA ___Multi-Colouring___).
-* Note: `Range-based for loops` will be used where possible to make this software modern. However, `OpenMP` still requires __traditional (index-based) for loops__.
+* Note: `range-based for loops` are used in places, so a compiler which supports `C++20` features is required. However, `OpenMP` still requires __traditional (index-based) for loops__.
 
 ## The Iterative Solvers
 * Here is a brief overview of the methods.
@@ -25,7 +25,7 @@
 
 
 ## Requirements
-* __Compiler__:`g++ 13.1.0`.
+* __Compiler__:`g++ 13.1.0`. 
 * __OS__: `Ubuntu 20.04`.
 * `OpenMP`. For __parallelising__ the iterative methods: __Jacobi__, __Gauss-Seidel__ and __SOR__.
 * `CMake`. For building the software.
