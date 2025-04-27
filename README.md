@@ -1,5 +1,5 @@
 # Parallel_Linear_Solver
-`C++20` Software which uses __OpenMP__ to __parallelise__ the three classic __Algebraic Iterative Methods__: __Jacobi__, __Gauss-Seidel__ and __Successive Over Relaxation (SOR)__ for solving Systems of the form Ax = b.
+`Modern C++` Software which uses __OpenMP__ to __parallelise__ the three classic __Algebraic Iterative Methods__: __Jacobi__, __Gauss-Seidel__ and __Successive Over Relaxation (SOR)__ for solving Systems of the form Ax = b.
 
 ## Introduction
 * There is a problem in trying to parallelise the __Gauss-Seidel__ & __SOR__ methods because they are inherently __sequential__ due to the dependency on the latest updated values within each iteration.
@@ -25,7 +25,7 @@
 
 
 ## Requirements
-* __Compiler__:`g++ 13.1.0`. Where possible, __C++20__ features have been used.
+* __Compiler__:`g++ 13.1.0`.
 * __OS__: `Ubuntu 20.04`.
 * `OpenMP`. For __parallelising__ the iterative methods: __Jacobi__, __Gauss-Seidel__ and __SOR__.
 * `CMake`. For building the software.
