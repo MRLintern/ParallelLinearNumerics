@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.18.3)
+
+set(PROJECT_NAME laPSolver)
+
+project(${PROJECT_NAME})
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall")
+set(CMAKE_CXX_REQUIRED True)
+
+# Find Eigen
+find_package(Eigen3 3.4 REQUIRED NO_MODULE)
+
+# Matplotlib-cpp path
+#include_directories(external/matplotlib-cpp)
+
+include_directories(include)
+
+file(GLOB SOURCES "./src/*.cpp" "./*.hpp")
+
+add_executable(${PROJECT_NAME} ${SOURCES})
