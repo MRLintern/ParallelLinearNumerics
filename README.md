@@ -34,4 +34,14 @@
 * `matplotlib-cpp`. For plotting __Convergence Rates__.
 
 ## Instructions for getting and Running the Software
-* 
+* `$ git clone git@github.com:MRLintern/Parallel_Linear_Solver.git`
+* `$ cd Parallel_Linear_Solver`
+* `$ mkdir build -p && cd build`
+* `$ cmake ..`
+* `$ cmake --build .`
+* `$ ./laPSolver`
+
+## Results
+* A `Python` script is provided to plot the results.
+* Run this script within the `build` directory where the `.csv` files are.
+* Note: A sample results are provided; go to the `Results directory`.
