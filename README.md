@@ -44,4 +44,4 @@
 ## Results
 * A `Python` script is provided to plot the results.
 * Run this script within the `build` directory where the `.csv` files are.
-* Note: A sample results are provided; go to the `Results directory`.
+* Note: A sample results are provided; go to the `Results` directory.
