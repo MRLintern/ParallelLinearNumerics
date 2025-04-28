@@ -18,7 +18,7 @@
 * TODO.
 ### The Gauss-Seidel Method
 * TODO.
-### The Successive Over Relaxation (SOR) Method
+### The Successive Over Relaxation (SOR) MethodUpdate laPSolver.cpp
 * TODO.
 ### Red-Black Ordering Scheme: What is it?
 * This is a technique to organize a __structured grid__ (like a 2D matrix) into two independent groups of points — typically labeled __"red"__ and __"black"__ like a __chessboard pattern__.
@@ -40,6 +40,7 @@
 * `$ cmake ..`
 * `$ cmake --build .`
 * `$ ./laPSolver`
+* The `.csv` files are saved in a folder called `Results` (within `build`). Run the `plotter.py` script in there.
 
 ## Results
 * A `Python` script is provided to plot the results.
