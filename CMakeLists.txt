@@ -11,9 +11,6 @@ set(CMAKE_CXX_REQUIRED True)
 # Find Eigen
 find_package(Eigen3 3.4 REQUIRED NO_MODULE)
 
-# Matplotlib-cpp path
-#include_directories(external/matplotlib-cpp)
-
 include_directories(include)
 
 file(GLOB SOURCES "./src/*.cpp" "./*.hpp")
