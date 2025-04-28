@@ -2,61 +2,54 @@
 
 #include <iostream>
 #include <fstream>
+#include <filesystem> // facilities for performing operations on file systems and their components e.g. file paths etc
 #include <chrono> // for timing convergence of methods
 #include <ranges> // for range based for loops and views; C++20 features
 #include <vector>
 #include <omp.h> // for OpenMP
 #include "laPSolver.hpp"
 
+// for saving CSV output data to different folder/directory
+namespace fs = std::filesystem;
 
 // implement constructor to initialise LPSolver data members
 LPSolver::LPSolver(const Eigen::MatrixXd& A, const Eigen::VectorXd& b, double tolerance, int maxIterations, double relaxFactor)
 
 	: A_(A), b_(b), tolerance_(tolerance), maxIterations_(maxIterations), relaxFactor_(relaxFactor) {}
 
-
 // function for plotting residuals vs. iterations for convergence; results saved to a CSV file
 void LPSolver::logPlotConvergence(const std::vector<double>& residuals, const std::string& method) const {
 
-	// make sure residuals vector/list contain values
-	if (residuals.empty()) {
+    if (residuals.empty()) {
+        std::cerr<<"WARNING: No residuals found for "<<method<<"\n";
+        return;
+    }
 
-		// report error if empty
-		std::cerr<<"WARNING: No residuals found for "<<method<<"\n";
+    const std::string resultsDir { "Results" };
 
-		return;
-	}
+    if (!fs::exists(resultsDir)) {
+        if (!fs::create_directory(resultsDir)) {
+            std::cerr<<"ERROR: Failed to Create Directory "<<resultsDir<<"\n";
+            return;
+        }
+    }
 
-	// create a filename associated with the iterative method
-	std::string filename { method + "_convergenceRates.csv" };
+    std::string filename { resultsDir + "/" + method + "_convergenceRates.csv" };
+    std::ofstream outFile(filename);
 
-	// open file
-	std::ofstream outFile(filename);
+    if (!outFile.is_open()) {
+        std::cerr<<"ERROR: Could Not Open File "<<filename<<" for Writing\n";
+        return;
+    }
 
-	// report if the file isn't open
-	if (!outFile.is_open()) {
+    outFile<<"Iteration, Residual\n";
+    for (size_t i{0}; i < residuals.size(); ++i) {
+        outFile<<i<<", "<<residuals[i]<<"\n";
+    }
 
-		std::cerr<<"ERROR: Could Not Open File "<<filename<<" for Writing\n";
-
-		return;
-	}
-
-	// header/titles for data column
-	outFile<<"Iteration, Residual\n";
-
-	// write residuals to the file
-	for (size_t i{0}; i < residuals.size(); ++i) {
-
-		outFile<<i<<", "<<residuals[i]<<"\n";
-	}
-
-	// close the file when processed
-	outFile.close();
-
-	// tell user data saved to file
-	std::cout<<"Convergence Residuals Saved to "<<filename<<"\n";
+    outFile.close();
+    std::cout<<"Convergence Residuals Saved to "<<filename<<"\n";
 }
-
 // -- iterative solvers
 
 // -- parallel Jacobi method
@@ -301,4 +294,6 @@ Eigen::VectorXd PSOR::solve() {
 	// return final computed value of vector x
 	return x;
 }
+
+
 
