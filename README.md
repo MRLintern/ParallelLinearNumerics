@@ -43,6 +43,6 @@
 * The `.csv` files are saved in a folder called `Results` (within `build`). Run the `plotter.py` script in there.
 
 ## Results
-* A `Python` script is provided to plot the results.
-* Run this script within the `build` directory where the `.csv` files are.
-* Note: A sample results are provided; go to the `Results` directory.
+* A `Python` script called `plotter.py` is provided to plot the results. This can be found in the `Results` folder.
+* A sample of the results is provided; go to the `Results` directory. You'll find a collated data set and a data set for each algorithm.
+* At present this plots the collated data set.
