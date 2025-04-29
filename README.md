@@ -2,7 +2,8 @@
 * `Modern C++` Software which uses __OpenMP__ to __parallelise__ the three classic __Algebraic Iterative Methods__: __Jacobi__, __Gauss-Seidel__ and __Successive Over Relaxation (SOR)__ for solving Systems of the form Ax = b.
 * __Note__: this software looks at __measuring convergence of the solvers__ and __not on solving a large algebraic system of equations__; another time.
 
-
+## TODO
+* Experiment with a range of `relaxation factors`. 
 ## Introduction
 * There is a problem in trying to parallelise the __Gauss-Seidel__ & __SOR__ methods because they are inherently __sequential__ due to the dependency on the latest updated values within each iteration.
 * However, we can parallelise it partially using a ___Red-Black Ordering Scheme___.
