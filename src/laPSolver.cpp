@@ -287,7 +287,7 @@ Eigen::VectorXd PSOR::solve() {
 	// stop timing for convergence
 	auto end { std::chrono::steady_clock::now() };
 
-	// output time taken by parallel Gauss-Seidel method
+	// output time taken by Parallel SOR method
 	std::cout<<"The Parallel SOR Method took "<<std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()<<"ms\n";
 
 	// plot convergence rate for parallel Gauss-Seidel method
