@@ -17,7 +17,7 @@ LPSolver::LPSolver(const Eigen::MatrixXd& A, const Eigen::VectorXd& b, double to
 
 	: A_(A), b_(b), tolerance_(tolerance), maxIterations_(maxIterations), relaxFactor_(relaxFactor) {}
 
-// function for plotting residuals vs. iterations for convergence; results saved to a CSV file
+
 void LPSolver::logPlotConvergence(const std::vector<double>& residuals, const std::string& method) const {
 
     if (residuals.empty()) {
@@ -42,9 +42,11 @@ void LPSolver::logPlotConvergence(const std::vector<double>& residuals, const st
         return;
     }
 
-    outFile<<"Iteration, Residual\n";
+    outFile <<"Iteration Residual"<<"\n";
+
     for (size_t i{0}; i < residuals.size(); ++i) {
-        outFile<<i<<", "<<residuals[i]<<"\n";
+        
+        outFile <<i<<" "<<residuals[i]<<"\n";
     }
 
     outFile.close();
@@ -294,6 +296,5 @@ Eigen::VectorXd PSOR::solve() {
 	// return final computed value of vector x
 	return x;
 }
-
 
 
