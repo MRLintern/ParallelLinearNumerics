@@ -41,7 +41,7 @@
 * `$ cmake ..`
 * `$ cmake --build .`
 * `$ ./laPSolver`
-* The `.csv` files are saved in a folder called `Results` (within `build`). Run the `plotter.py` script in there.
+* The `.csv` files are saved in a folder called `Results` (within `build`).
 
 ## Results
 * A `Python` script called `plotter.py` is provided to plot the results. This can be found in the `Results` folder.
