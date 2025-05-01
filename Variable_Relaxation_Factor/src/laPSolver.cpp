@@ -94,6 +94,9 @@ Eigen::VectorXd PJacobi::solve() {
 
 	// -- main iteration loop
 
+	// for counting the number of iterations
+	int numIterations {0};
+
 	for (int k{0}; k < maxIterations_; ++k) {
 
 		// parallel for loop for implementing OpenMP
@@ -123,6 +126,8 @@ Eigen::VectorXd PJacobi::solve() {
 		// store calculated residuals for plotting
 		residuals.push_back(res);
 
+		numIterations = k + 1;
+
 		// check for convergence
 		if (res < tolerance_) { break; } // once convergence is reached, stop
 	}
@@ -132,6 +137,9 @@ Eigen::VectorXd PJacobi::solve() {
 
 	// output time taken by parallel Jacobi method
 	std::cout<<"The Parallel Jacobi Method took "<<std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()<<"ms\n";
+
+	// report number iterations taken for convergence
+	std::cout<<"Converged in "<<numIterations<<" Iterations\n";
 
 	// plot convergence rate for parallel Jacobi method
 	logPlotConvergence(residuals, "Parallel-Jacobi");
@@ -154,6 +162,9 @@ Eigen::VectorXd PGaussSeidel::solve() {
 
 	// start timing for convergence
 	auto start { std::chrono::steady_clock::now() };
+
+	// number of iterations until convergence
+	int numIterations {0};
 
 	// -- main iteration loop
 
@@ -210,6 +221,9 @@ Eigen::VectorXd PGaussSeidel::solve() {
 		// store calculated residuals for plotting
 		residuals.push_back(res);
 
+		// update number of iterations
+		numIterations = k + 1;
+
 		// check for convergence
 		if (res < tolerance_) { break; }
 
@@ -220,6 +234,8 @@ Eigen::VectorXd PGaussSeidel::solve() {
 
 	// output time taken by parallel Gauss-Seidel method
 	std::cout<<"The Parallel Gauss-Seidel Method took "<<std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()<<"ms\n";
+
+	std::cout<<"Converged in "<<numIterations<<" Iterations\n";
 
 	// plot convergence rate for parallel Gauss-Seidel method
 	logPlotConvergence(residuals, "Parallel-Gauss-Seidel");
@@ -243,6 +259,9 @@ Eigen::VectorXd PSOR::solve() {
 
 	// start timing for convergence
 	auto start { std::chrono::steady_clock::now() };
+
+	// number of iterations
+	int numIterations {0};
 
 	// -- main iteration loop
 
@@ -300,6 +319,9 @@ Eigen::VectorXd PSOR::solve() {
 		// store calculated residuals for plotting
 		residuals.push_back(res);
 
+		// update number of itetrations
+		numIterations = k + 1;
+
 		// check for convergence
 		if (res < tolerance_) { break; }
 
@@ -311,8 +333,8 @@ Eigen::VectorXd PSOR::solve() {
 	// output time taken by parallel Gauss-Seidel method
 	std::cout<<"The Parallel SOR Method took "<<std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()<<"ms\n";
 
-	// plot convergence rate for parallel SOR  method
-	//logPlotConvergence(residuals, "Parallel-SOR");
+	std::cout<<"Converged in "<<numIterations<<" Iterations\n";
+
 	logPlotConvergence(residuals, "Parallel-SOR", relaxFactor_);
 
 	// return final computed value of vector x
