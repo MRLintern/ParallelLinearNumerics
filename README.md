@@ -19,7 +19,7 @@
 * TODO.
 ### The Gauss-Seidel Method
 * TODO.
-### The Successive Over Relaxation (SOR) MethodUpdate laPSolver.cpp
+### The Successive Over Relaxation (SOR) Method
 * TODO.
 ### Red-Black Ordering Scheme: What is it?
 * This is a technique to organize a __structured grid__ (like a 2D matrix) into two independent groups of points — typically labeled __"red"__ and __"black"__ like a __chessboard pattern__.
