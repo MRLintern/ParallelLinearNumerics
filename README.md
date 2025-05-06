@@ -23,7 +23,7 @@
 * __Idea__: Like the `Jacobi Method`, but uses newly updated values as soon as they are available.
 * __Convergence__: Often faster than the `Jacobi Method`. Also needs the `coefficient matrix A` to be `diagonally dominant` or `symmetric positive definite`.
 * __Pros__: Improved convergence over the `Jacobi Method`.
-* __Cons__: `Less parallelizable` due to `data dependencies`.
+* __Cons__: `Less parallelizable` due to `data dependencies`. To `parallelise`, you need to apply, for example, the `Red-Black Ordering Scheme`.
   
 ### The Successive Over Relaxation (SOR) Method
 * __Idea__: An extension of the `Gauss-Seidel Method` that uses a ___Relaxation Factor ω___ to potentially `accelerate convergence`.
@@ -31,7 +31,7 @@
     * __ω = 1__: `Gauss-Seidel Method`.
     * __ω > 1__: `Over-relaxation` (usually speeds up convergence).
 * __Pros__: ___Can___ converge much faster with optimal ω.
-* __Cons__: Requires tuning of ω; not always easy to choose.
+* __Cons__: Requires tuning of ω; not always easy to choose. `Less parallelizable` due to `data dependencies`. To `parallelise`, you need to apply, for example, the `Red-Black Ordering Scheme`.
   
 ### Red-Black Ordering Scheme: What is it?
 * This is a technique to organize a __structured grid__ (like a 2D matrix) into two independent groups of points — typically labeled __"red"__ and __"black"__ like a __chessboard pattern__.
