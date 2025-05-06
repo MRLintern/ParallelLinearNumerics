@@ -27,7 +27,12 @@
   
 ### The Successive Over Relaxation (SOR) Method
 * __Idea__: An extension of the `Gauss-Seidel Method` that uses a ___Relaxation Factor ω___ to potentially `accelerate convergence`.
-* __Formula__: xi(k+1)​=(1−ω)xi(k)​+aii​ω​(bi​−j<i∑​aij​xj(k+1)​−j>i∑​aij​xj(k)​)
+* __Parameter__: __ω ∈ (0,2)__.
+    * __ω = 1__: `Gauss-Seidel Method`.
+    * __ω > 1__: `Over-relaxation` (usually speeds up convergence).
+* __Pros__: ___Can___ converge much faster with optimal ω.
+* __Cons__: Requires tuning of ω; not always easy to choose.
+  
 ### Red-Black Ordering Scheme: What is it?
 * This is a technique to organize a __structured grid__ (like a 2D matrix) into two independent groups of points — typically labeled __"red"__ and __"black"__ like a __chessboard pattern__.
 * Points of one colour can be updated in parallel because none of them directly depend on each other - only on the other colour's points.
