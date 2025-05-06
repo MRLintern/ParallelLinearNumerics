@@ -2,8 +2,6 @@
 * `Modern C++` Software which uses __OpenMP__ to __parallelise__ the three classic __Algebraic Iterative Methods__: __Jacobi__, __Gauss-Seidel__ and __Successive Over Relaxation (SOR)__ for solving Systems of the form Ax = b.
 * __Note__: this software looks at __measuring convergence of the solvers__ and __not on solving a large algebraic system of equations__; another time.
 
-## TODO
-* Experiment with a range of `relaxation factors`. 
 ## Introduction
 * There is a problem in trying to parallelise the __Gauss-Seidel__ & __SOR__ methods because they are inherently __sequential__ due to the dependency on the latest updated values within each iteration.
 * However, we can parallelise it partially using a ___Red-Black Ordering Scheme___.
@@ -16,11 +14,20 @@
 * Here is a brief overview of the methods.
 
 ### The Jacobi Method
-* TODO.
+* __Idea__: Updates each component of the solution vector independently using the values from the previous iteration.
+* __Convergence__: Requires that the `coefficient matrix A` is `diagonally dominant` or `symmetric positive definite`.
+* __Pros__: Simple and parallelizable.
+* __Cons__: Slow convergence compared to the `Gauss-Seidel Method`.
+  
 ### The Gauss-Seidel Method
-* TODO.
+* __Idea__: Like the `Jacobi Method`, but uses newly updated values as soon as they are available.
+* __Convergence__: Often faster than the `Jacobi Method`. Also needs the `coefficient matrix A` to be `diagonally dominant` or `symmetric positive definite`.
+* __Pros__: Improved convergence over the `Jacobi Method`.
+* __Cons__: `Less parallelizable` due to `data dependencies`.
+  
 ### The Successive Over Relaxation (SOR) Method
-* TODO.
+* __Idea__: An extension of the `Gauss-Seidel Method` that uses a ___Relaxation Factor ω___ to potentially `accelerate convergence`.
+* __Formula__: xi(k+1)​=(1−ω)xi(k)​+aii​ω​(bi​−j<i∑​aij​xj(k+1)​−j>i∑​aij​xj(k)​)
 ### Red-Black Ordering Scheme: What is it?
 * This is a technique to organize a __structured grid__ (like a 2D matrix) into two independent groups of points — typically labeled __"red"__ and __"black"__ like a __chessboard pattern__.
 * Points of one colour can be updated in parallel because none of them directly depend on each other - only on the other colour's points.
