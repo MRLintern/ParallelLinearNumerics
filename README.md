@@ -31,7 +31,7 @@
     * __ω = 1__: `Gauss-Seidel Method`.
     * __ω > 1__: `Over-relaxation` (usually speeds up convergence).
 * __Pros__: ___Can___ converge much faster with optimal ω.
-* __Cons__: Requires tuning of ω; not always easy to choose. `Less parallelizable` due to `data dependencies`. To `parallelise`, you need to apply, for example, the `Red-Black Ordering Scheme`.
+* __Cons__: Requires tuning of ω; not always easy to choose. Values are chosen experimentally. `Less parallelizable` due to `data dependencies`. To `parallelise`, you need to apply, for example, the `Red-Black Ordering Scheme`.
   
 ### Red-Black Ordering Scheme: What is it?
 * This is a technique to organize a __structured grid__ (like a 2D matrix) into two independent groups of points — typically labeled __"red"__ and __"black"__ like a __chessboard pattern__.
