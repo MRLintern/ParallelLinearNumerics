@@ -274,7 +274,7 @@ Eigen::VectorXd PSOR::solve() {
 			}
 		}
 
-		// stop timing for convergence
+		// calculate residual (Euclidean/L2) norm
 		double res { (A_ * x - b_).norm() };
 
 		// store calculated residuals for plotting
