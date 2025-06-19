@@ -1,5 +1,5 @@
 # Parallel_Linear_Solver
-* `Modern C++` Software which uses __OpenMP__ to __parallelise__ the three classic __Algebraic Iterative Methods__: __Jacobi__, __Gauss-Seidel__ and __Successive Over Relaxation (SOR)__ for solving Systems of the form Ax = b.
+* `Modern C++ (ISO 20)` Software which uses __OpenMP__ to __parallelise__ the three classic __Algebraic Iterative Methods__: __Jacobi__, __Gauss-Seidel__ and __Successive Over Relaxation (SOR)__ for solving Systems of the form Ax = b.
 * __Note__: this software looks at __measuring convergence of the solvers__ and __not on solving a large algebraic system of equations__; another time.
 
 ## Introduction
