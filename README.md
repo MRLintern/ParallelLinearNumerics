@@ -48,7 +48,7 @@
 * __OS__: `Ubuntu 20.04`.
 * `OpenMP`. For __parallelising__ the iterative methods: __Jacobi__, __Gauss-Seidel__ and __SOR__.
 * `CMake`. For building the software.
-* `matplotlib-cpp`. For plotting __Convergence Rates__.
+* `Python` for plotting results. You'll need `Matplotlib` for this.
 
 ## Instructions for getting and Running the Software
 ---
