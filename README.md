@@ -29,10 +29,10 @@
 * __Cons__: `Less parallelizable` due to `data dependencies`. To `parallelise`, you need to apply, for example, the `Red-Black Ordering Scheme`.
   
 ### The Successive Over Relaxation (SOR) Method
-* __Idea__: An extension of the `Gauss-Seidel Method` that uses a ___Relaxation Factor ω___ to potentially `accelerate convergence`.
-* __Parameter__: __ω ∈ (0,2)__.
-    * __ω = 1__: `Gauss-Seidel Method`.
-    * __ω > 1__: `Over-relaxation` (usually speeds up convergence).
+* __Idea__: An extension of the `Gauss-Seidel Method` that uses a ___Relaxation Factor w___ to potentially `accelerate convergence`.
+* __Parameter range__: __0 < w < 2__.
+    * __w = 1__: `Gauss-Seidel Method`.
+    * __w > 1__: `Over-relaxation` (usually speeds up convergence).
 * __Pros__: ___Can___ converge much faster with optimal ω.
 * __Cons__: Requires tuning of ω; not always easy to choose. Values are chosen experimentally. `Less parallelizable` due to `data dependencies`. To `parallelise`, you need to apply, for example, the `Red-Black Ordering Scheme`.
   
