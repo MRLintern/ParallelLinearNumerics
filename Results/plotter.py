@@ -9,7 +9,7 @@ plt.semilogy(df['Iteration'], df['Residual (SOR)'], label='SOR (1.7)', marker='^
 
 plt.xlabel('Number of Iterations')
 plt.ylabel('Residual (log scale)')
-plt.title('Convergence of Parallel: Jacobi, Gauss-Seidel & SOR Algorithms')
+plt.title('Convergence of Parallel Jacobi, Gauss-Seidel & SOR Algorithms')
 plt.grid(True, which='both', linestyle='--', linewidth=0.5)
 plt.legend()
 plt.tight_layout()
