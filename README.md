@@ -58,7 +58,7 @@
 * `$ cmake ..`
 * `$ cmake --build .`
 * `$ ./laPSolver`
-* The `.csv` files are saved in a folder called `Results` (within `build`).
+* The `.csv` files are saved in a folder called `Results` (within the `build` directory).
 
 ## Results
 ---
