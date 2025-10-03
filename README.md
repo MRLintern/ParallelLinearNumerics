@@ -53,7 +53,7 @@
 ## Instructions for getting and Running the Software
 ---
 * `$ git clone git@github.com:MRLintern/Parallel_Linear_Solver.git`
-* `$ cd Parallel_Linear_Solver`
+* `$ cd ParallelLinearNumerics`
 * `$ mkdir build -p && cd build`
 * `$ cmake ..`
 * `$ cmake --build .`
