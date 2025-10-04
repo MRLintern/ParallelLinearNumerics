@@ -33,8 +33,8 @@
 * __Parameter range__: __0 < w < 2__.
     * __w = 1__: `Gauss-Seidel Method`.
     * __w > 1__: `Over-relaxation` (usually speeds up convergence).
-* __Pros__: ___Can___ converge much faster with optimal ω.
-* __Cons__: Requires tuning of ω; not always easy to choose. Values are chosen experimentally. `Less parallelizable` due to `data dependencies`. To `parallelise`, you need to apply, for example, the `Red-Black Ordering Scheme`.
+* __Pros__: ___Can___ converge much faster with optimal w.
+* __Cons__: Requires tuning of w; not always easy to choose. Values are chosen experimentally. `Less parallelizable` due to `data dependencies`. To `parallelise`, you need to apply, for example, the `Red-Black Ordering Scheme`.
   
 ### Red-Black Ordering Scheme: What is it?
 * This is a technique to organize a __structured grid__ (like a 2D matrix) into two independent groups of points — typically labeled __"red"__ and __"black"__ like a __chessboard pattern__.
